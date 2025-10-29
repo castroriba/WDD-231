@@ -1,0 +1,184 @@
+/* ===============================
+   Base Styles - WDD 231 Chamber
+   Author: [Your Name]
+   =============================== */
+
+/* Reset and general defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===============================
+   Header and Navigation
+   =============================== */
+header {
+  position: relative;
+  z-index: 10;
+  background-color: #004080; /* deep blue background */
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header img {
+  display: block;
+  margin: 0 auto 1rem;
+  height: 60px;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* clearer text */
+}
+
+/* Navigation */
+nav {
+  background-color: #004080;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #0059b3;
+}
+
+/* ===============================
+   Hero Section
+   =============================== */
+.hero {
+  background: url("../images/hero.webp") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem;
+  position: relative;
+}
+
+/* Optional overlay for clarity */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay to make text stand out */
+  z-index: 1;
+}
+
+.hero h1,
+.hero p,
+.hero button {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.hero button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #0074c2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #005c99;
+}
+
+/* ===============================
+   Main Content Sections
+   =============================== */
+main {
+  flex: 1;
+  padding: 1rem;
+}
+
+section {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 900px;
+}
+
+section h2 {
+  color: #004a7c;
+  margin-bottom: 0.75rem;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+footer {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+/* ===============================
+   Responsive Design
+   =============================== */
+@media screen and (min-width: 640px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
