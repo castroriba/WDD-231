@@ -1,48 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kampala Chamber of Commerce</title>
-  <link rel="stylesheet" href="css/base.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampala City Chamber of Commerce</title>
+    <meta name="description" content="Official website for the Kampala City Chamber of Commerce, promoting business growth in Uganda's capital city.">
+    
+    <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
-  <header>
-    <img src="images/logo.webp" alt="City Chamber of Commerce Logo">
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="directory.html">Directory</a>
-      <a href="join.html">Join</a>
-      <a href="discover.html">Discover</a>
-    </nav>
-  </header>
+    <header class="site-header">
+        <div class="logo-container">
+            <img src="images/logo.webp" alt="Kampala City Chamber of Commerce Logo">
+            <span class="site-title">Kampala Chamber</span>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="directory.html" class="nav-link">Directory</a>
+            <a href="join.html" class="nav-link">Join Us</a>
+            <a href="discover.html" class="nav-link">Discover KLA</a>
+        </nav>
+        
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+    </header>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome to Kampala Chamber of Commerce</h1>
-      <button>Keynote Tickets</button>
-    </section>
+    <main id="content">
+        <section class="hero-cta" aria-labelledby="hero-heading">
+            <h1 id="hero-heading">Empowering Kampala's Business Community</h1>
+            <a href="events.html" class="cta-button">Reserve Your Keynote Tickets</a>
+        </section>
 
-    <section class="events">Events section here</section>
+        <section id="course-list-section">
+            <h2>My Course Load (WDD231)</h2>
+            
+            <div class="filter-controls">
+                <button data-filter="All">All Courses</button>
+                <button data-filter="WDD">WDD Subjects</button>
+                <button data-filter="CSE">CSE Subjects</button>
+            </div>
+            
+            <div id="course-list-container">
+                </div>
+            
+            <p class="total-credits-display">
+                Total Credits Remaining: <span id="total-credits">0</span>
+            </p>
+        </section>
 
-    <section class="weather">
-      <h2>Current Weather</h2>
-      <p>Example: 75°F, Partly Cloudy</p>
-    </section>
 
-    <section class="business-spotlight">
-      <h2>Business Spotlight</h2>
-      <div class="business-card">Business 1 info</div>
-      <div class="business-card">Business 2 info</div>
-      <div class="business-card">Business 3 info</div>
-    </section>
-  </main>
+        <div class="content-grid">
+            
+            <article class="events-announcements">
+                <h2>Upcoming Events</h2>
+                <div class="event-list">Events list/cards go here...</div>
+            </article>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Your City Chamber of Commerce</p>
-    <p>Last modified: <span id="lastModified"></span></p>
-  </footer>
+            <aside class="sidebar">
+                <section class="weather-forecast">
+                    <h3>Kampala Weather</h3>
+                    <p id="current-temp" data-temp="78" data-condition="Sunny">Loading...</p>
+                    <img src="images/weather.svg" alt="Weather icon">
+                </section>
 
-  <script src="scripts/main.js"></script>
+                <section class="business-spotlight">
+                    <h3>Featured Businesses</h3>
+                    <figure class="spotlight-card">Business 1</figure>
+                    <figure class="spotlight-card">Business 2</figure>
+                    <figure class="spotlight-card">Business 3</figure>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>Kampala Chamber of Commerce &copy; <span id="year"></span></p>
+        <p>
+            Contact: <a href="mailto:info@kcc.ug">info@kcc.ug</a> | Tel: <a href="tel:+256414123456">+256 414 123 456</a>
+        </p>
+        <address>P.O. Box 7010, Kampala, Uganda</address>
+        
+        <p class="metadata">Last Updated: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
 </body>
 </html>

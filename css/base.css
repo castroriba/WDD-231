@@ -1,184 +1,290 @@
-/* ===============================
-   Base Styles - WDD 231 Chamber
-   Author: [Your Name]
-   =============================== */
-
-/* Reset and general defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ------------------------------------------------------------------- */
+/* 0. CSS Reset & Global Variables */
+/* ------------------------------------------------------------------- */
+*, *::before, *::after {
+    /* Sets up modern, easier-to-manage box model */
+    box-sizing: border-box; 
 }
 
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
+/* Remove default margin and padding */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Define Custom Properties (CSS Variables) for easy color changes */
+:root {
+    /* Primary Colors (Use these to meet Color Contrast requirement!) */
+    --primary-color: #004d99;      /* Deep Blue (Example: Kampala's Blue) */
+    --secondary-color: #ffcc00;    /* Gold/Yellow (Example: Accent Color) */
+    --text-dark: #333;             /* Dark Gray for main text */
+    --text-light: #fff;            /* White for contrast text */
+    --background-light: #f5f5f5;   /* Light gray background */
+    --background-white: #fff;      /* Pure white for sections */
+    
+    /* Layout Variables */
+    --max-width: 1200px;
+    --gutter: 1rem;
 }
 
 body {
-  font-family: "Open Sans", Arial, sans-serif;
-  line-height: 1.5;
-  color: #222;
-  background-color: #f8f8f8;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: var(--background-light);
+    color: var(--text-dark);
 }
 
-/* ===============================
-   Header and Navigation
-   =============================== */
-header {
-  position: relative;
-  z-index: 10;
-  background-color: #004080; /* deep blue background */
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
+/* ------------------------------------------------------------------- */
+/* 1. HEADER & NAVIGATION STYLING (Criterion 6: Navigation) */
+/* ------------------------------------------------------------------- */
+.site-header {
+    background-color: var(--primary-color);
+    padding: var(--gutter) 2%;
+    display: flex; /* Starts mobile-first Flexbox layout */
+    flex-direction: column; 
+    align-items: center;
+    gap: 1rem;
 }
 
-header img {
-  display: block;
-  margin: 0 auto 1rem;
-  height: 60px;
+.logo-container {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
 }
 
-header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: white;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* clearer text */
+.logo-container img {
+    height: 60px; /* Adjust size */
+    margin-right: 10px;
 }
 
-/* Navigation */
-nav {
-  background-color: #004080;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0.5rem 0;
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+.main-nav {
+    display: flex;
+    flex-direction: column; /* Stacks links vertically on mobile */
+    width: 100%;
 }
 
-nav a:hover,
-nav a.active {
-  background-color: #0059b3;
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.75rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s;
 }
 
-/* ===============================
-   Hero Section
-   =============================== */
-.hero {
-  background: url("../images/hero.webp") center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 6rem 1rem;
-  position: relative;
+.nav-link:last-child {
+    border-bottom: none;
 }
 
-/* Optional overlay for clarity */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* dark overlay to make text stand out */
-  z-index: 1;
+/* Wayfinding: Highlight the active page link */
+.nav-link.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
-.hero h1,
-.hero p,
-.hero button {
-  position: relative;
-  z-index: 2;
+.nav-link:hover {
+    background-color: #0066cc; /* Slightly lighter primary color on hover */
 }
 
-.hero h1 {
-  font-size: 2.2rem;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+/* Hide the toggle button by default (only show on mobile if needed) */
+.menu-toggle {
+    display: none;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-}
-
-.hero button {
-  margin-top: 1rem;
-  padding: 0.75rem 1.25rem;
-  background-color: #0074c2;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.hero button:hover {
-  background-color: #005c99;
-}
-
-/* ===============================
-   Main Content Sections
-   =============================== */
+/* ------------------------------------------------------------------- */
+/* 2. MAIN LAYOUT & SECTIONS (Criterion 2 & 8: Design Principles & Layout) */
+/* ------------------------------------------------------------------- */
 main {
-  flex: 1;
-  padding: 1rem;
+    max-width: var(--max-width); /* Sets a readable max-width */
+    margin: 0 auto; /* Centers the main content */
+    padding: var(--gutter);
 }
 
-section {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin: 1rem auto;
-  padding: 1rem;
-  max-width: 900px;
+/* Hero Section Styling */
+.hero-cta {
+    background-color: var(--background-white);
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: 1px solid #ddd;
 }
 
-section h2 {
-  color: #004a7c;
-  margin-bottom: 0.75rem;
+.hero-cta h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-/* ===============================
-   Footer
-   =============================== */
-footer {
-  background-color: #004080;
-  color: white;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.9rem;
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-footer p {
-  margin: 0.25rem 0;
+.cta-button:hover {
+    background-color: #e6b800;
 }
 
-/* ===============================
-   Responsive Design
-   =============================== */
-@media screen and (min-width: 640px) {
-  header h1 {
-    font-size: 2.5rem;
-  }
+/* General Section Styling */
+section, article, aside {
+    background-color: var(--background-white);
+    padding: var(--gutter);
+    margin-bottom: var(--gutter);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
 
-  .hero h1 {
-    font-size: 2.8rem;
-  }
+/* FIX: Resizes the weather image to a reasonable size */
+.weather-forecast img {
+    max-width: 100px; 
+    height: auto; 
+    display: block;
+    margin: 10px auto 0; 
+}
 
-  section {
-    padding: 2rem;
-  }
+
+/* ------------------------------------------------------------------- */
+/* 3. COURSE LIST STYLING (Criteria 9, 10, 12) */
+/* ------------------------------------------------------------------- */
+
+#course-list-section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-controls button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-controls button:hover {
+    background-color: #0066cc;
+}
+
+.course-card {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-white);
+    transition: box-shadow 0.3s;
+}
+
+.course-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Criterion 12: Visual indication for completed courses */
+.course-card.completed {
+    /* Use a light color to show it's "done" or retired from the current load */
+    background-color: #e0e0e0;
+    opacity: 0.7; 
+    text-decoration: line-through;
+}
+
+.course-card.completed * { /* Target all children of completed cards */
+    text-decoration: none; /* Only the main line should be crossed out */
+    color: #888;
+}
+
+.course-card .credits {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.total-credits-display {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-top: 1rem;
+    border-top: 1px dashed #ccc;
+    margin-top: 1rem;
+}
+
+
+/* ------------------------------------------------------------------- */
+/* 4. FOOTER STYLING (Criterion 13: JavaScript targets) */
+/* ------------------------------------------------------------------- */
+.site-footer {
+    background-color: var(--text-dark);
+    color: var(--background-light);
+    padding: var(--gutter) 2%;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.site-footer p {
+    margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------- */
+/* 5. MEDIA QUERY FOR DESKTOP VIEW (Criterion 2 & 6: Responsiveness) */
+/* ------------------------------------------------------------------- */
+@media (min-width: 768px) {
+    
+    .site-header {
+        flex-direction: row; /* Header elements side-by-side */
+        justify-content: space-between;
+    }
+
+    .main-nav {
+        flex-direction: row; /* Navigation links side-by-side */
+        width: auto;
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link:last-child {
+        border-right: none;
+    }
+
+    /* Use CSS Grid for the main content area */
+    .content-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* 2/3 Events, 1/3 Sidebar */
+        gap: var(--gutter);
+    }
+
+    .events-announcements {
+        grid-column: 1 / 2;
+    }
+
+    .sidebar {
+        grid-column: 2 / 3;
+    }
 }
