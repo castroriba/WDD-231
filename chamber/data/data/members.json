@@ -19,9 +19,9 @@
             "industry": "Information Technology"
         },
         {
-            "name": "Him4Her Foundation",
+            "name": "Him4her Foundation",
             "address": "123 Charity Lane",
-            "phone": "+256-765-893-796",
+            "phone": "+256-414-999-789",
             "website": "https://him4herfoundation.org",
             "imageurl": "images/him4herfoundation.webp",
             "membership_level": "Non-Profit",
@@ -35,7 +35,7 @@
             "imageurl": "images/logistics.webp",
             "membership_level": "Gold",
             "industry": "Transportation"
-        }
+        },
         {
             "name": "Speke Resort Hotels",
             "address": "Wavamunno Road, Munyonyo",
@@ -49,7 +49,7 @@
             "name": "Creative Arts Agency",
             "address": "Plot 54, Kisementi",
             "phone": "+256-414-333-222",
-            "website": "https://Creative.ug",
+            "website": "https://creative.ug",
             "imageurl": "images/creative.webp",
             "membership_level": "Silver",
             "industry": "Marketing & Media"
