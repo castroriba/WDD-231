@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Directory - Kampala Chamber</title>
+    <meta name="description" content="Browse the directory of member businesses in the Kampala City Chamber of Commerce.">
+    
+    <link rel="icon" href="images/favicon.ico">
+    <meta property="og:title" content="Member Directory - Kampala Chamber">
+    <meta property="og:description" content="Find contact information, websites, and details for all member businesses in Kampala.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-github-username.github.io/wdd231/directory.html">
+    <meta property="og:image" content="https://your-github-username.github.io/wdd231/images/directory-hero.webp">
+    <meta property="og:locale" content="en_US">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/directory.css"> 
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <img src="images/logo.webp" alt="Kampala City Chamber of Commerce Logo">
+            <span class="site-title">Kampala Chamber</span>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="directory.html" class="nav-link active">Directory</a>
+            <a href="join.html" class="nav-link">Join Us</a>
+            <a href="discover.html" class="nav-link">Discover KLA</a>
+        </nav>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+    </header>
+
+    <main id="content">
+        <section class="directory-container" aria-labelledby="directory-heading">
+            <h1 id="directory-heading">Member Business Directory</h1>
+            
+            <div class="menu-view-control">
+                <button id="grid-view" class="view-button active-view">🖼️ Grid View</button>
+                <button id="list-view" class="view-button">📋 List View</button>
+            </div>
+
+            <div id="directory-cards" class="grid"> 
+                <p>Loading member businesses...</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Kampala Chamber of Commerce &copy; <span id="year"></span></p>
+        <p>Contact: <a href="mailto:info@kcc.ug">info@kcc.ug</a> | Tel: <a href="tel:+256414123456">+256 414 123 456</a></p>
+        <address>P.O. Box 7010, Kampala, Uganda</address>
+        <p class="metadata">Last Updated: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
+</body>
+</html>
