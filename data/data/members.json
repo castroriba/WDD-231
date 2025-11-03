@@ -1,7 +1,7 @@
 {
     "members": [
         {
-            "name": "Uganda Coffee Emporium",
+            "name": "Mpororo Coffee",
             "address": "Plot 10, Kampala Road",
             "phone": "+256-414-777-123",
             "website": "https://ugandacoffee.com",
@@ -19,11 +19,11 @@
             "industry": "Information Technology"
         },
         {
-            "name": "Gulu Community Non-Profit",
+            "name": "Him4Her Foundation",
             "address": "123 Charity Lane",
-            "phone": "+256-414-999-789",
-            "website": "https://gulucommunity.org",
-            "imageurl": "images/community.webp",
+            "phone": "+256-765-893-796",
+            "website": "https://him4herfoundation.org",
+            "imageurl": "images/him4herfoundation.webp",
             "membership_level": "Non-Profit",
             "industry": "Non-Profit"
         },
