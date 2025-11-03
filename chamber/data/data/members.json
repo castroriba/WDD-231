@@ -5,7 +5,7 @@
             "address": "Plot 10, Kampala Road",
             "phone": "+256-414-777-123",
             "website": "https://ugandacoffee.com",
-            "imageurl": "images/coffee.webp",
+            "imageurl": "chamber/images/coffee.webp",
             "membership_level": "Gold",
             "industry": "Food & Beverage"
         },
@@ -14,7 +14,7 @@
             "address": "Innovation Village, Ntinda",
             "phone": "+256-414-888-456",
             "website": "https://acaciatech.ug",
-            "imageurl": "images/tech.webp",
+            "imageurl": "chamber/images/tech.webp",
             "membership_level": "Silver",
             "industry": "Information Technology"
         },
@@ -23,7 +23,7 @@
             "address": "123 Charity Lane",
             "phone": "+256-414-999-789",
             "website": "https://him4herfoundation.org",
-            "imageurl": "images/him4herfoundation.webp",
+            "imageurl": "chamber/images/him4herfoundation.webp",
             "membership_level": "Non-Profit",
             "industry": "Non-Profit"
         },
@@ -32,7 +32,7 @@
             "address": "Port Bell Road",
             "phone": "+256-414-111-000",
             "website": "https://nilelogistics.com",
-            "imageurl": "images/logistics.webp",
+            "imageurl": "chamber/images/logistics.webp",
             "membership_level": "Gold",
             "industry": "Transportation"
         },
@@ -41,7 +41,7 @@
             "address": "Wavamunno Road, Munyonyo",
             "phone": "+256-414-222-111",
             "website": "https://spekeresort.ug",
-            "imageurl": "images/hotels.webp",
+            "imageurl": "chamber/images/hotels.webp",
             "membership_level": "Gold",
             "industry": "Hospitality"
         },
@@ -50,7 +50,7 @@
             "address": "Plot 54, Kisementi",
             "phone": "+256-414-333-222",
             "website": "https://creative.ug",
-            "imageurl": "images/creative.webp",
+            "imageurl": "chamber/images/creative.webp",
             "membership_level": "Silver",
             "industry": "Marketing & Media"
         },
@@ -59,7 +59,7 @@
             "address": "Luzira Industrial Park",
             "phone": "+256-414-444-333",
             "website": "https://eagleinsurance.ug",
-            "imageurl": "images/insurance.webp",
+            "imageurl": "chamber/images/insurance.webp",
             "membership_level": "Member",
             "industry": "Financial Services"
         }
