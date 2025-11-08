@@ -1,100 +1,108 @@
-/* Styling for the Directory Page (W02 Assignment) */
+/* Styling for the directory page */
 
-/* General Container */
-.directory-container {
-    padding: 20px;
-}
-
-/* View Control Buttons */
+/* Directory Control Buttons */
 .menu-view-control {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
     margin-bottom: 20px;
 }
-
 .view-button {
     padding: 8px 15px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--background-white);
-    color: var(--primary-color);
+    border: 1px solid #113f8c; /* Dark blue from your header */
+    background-color: white;
+    color: #113f8c;
     cursor: pointer;
     border-radius: 5px;
-    transition: all 0.2s;
 }
-
 .view-button.active-view {
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    background-color: #113f8c;
+    color: white;
 }
 
-.view-button:hover:not(.active-view) {
-    background-color: var(--background-light);
-}
-
-/* --- GRID VIEW STYLES (Default) --- */
+/* --- GRID VIEW (Default) --- */
 #directory-cards.grid {
     display: grid;
-    /* Uses CSS Grid auto-fit for responsive column creation */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
 #directory-cards.grid section {
-    text-align: center;
+    background-color: #f7f7f7;
     border: 1px solid #ddd;
-    padding: 15px;
+    padding: 20px;
+    text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+#directory-cards.grid h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+#directory-cards.grid p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+/* Image styling for grid view */
 #directory-cards.grid img {
-    max-width: 150px;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border: none;
 }
 
-
-/* --- LIST VIEW STYLES (Switched via JS) --- */
+/* --- LIST VIEW (Criteria 11) --- */
 #directory-cards.list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0;
 }
 
+/* Style the sections for a clean list look */
 #directory-cards.list section {
     display: grid;
-    /* Columns for list: Logo, Name/Info, Website, Level */
-    grid-template-columns: 60px 2fr 1.5fr 1fr;
-    gap: 15px;
+    /* Define columns for list view: Name, Address, Phone, Website, Level */
+    grid-template-columns: 2fr 2fr 1.5fr 1.5fr 1fr; 
     align-items: center;
-    border: none;
+    padding: 10px 20px;
     border-bottom: 1px solid #eee;
-    padding: 10px 0;
-}
-
-#directory-cards.list section:last-child {
-    border-bottom: none;
-}
-
-#directory-cards.list img {
-    max-width: 50px;
-    height: auto;
-    margin: 0;
-    justify-self: start;
-}
-
-/* Hides content not needed for a clean list view */
-#directory-cards.list p:first-of-type { /* Hides address in list view */
-    display: none;
-}
-
-#directory-cards.list p:nth-of-type(2) { /* Hides phone in list view */
-    display: none;
-}
-
-#directory-cards.list h2 {
-    font-size: 1.1rem;
+    background-color: white; /* Simple background */
+    box-shadow: none; /* Remove box shadow for list */
     text-align: left;
+}
+
+/* Style the first row as a header if desired, or just list items */
+#directory-cards.list section:first-child {
+    border-top: 1px solid #ccc;
+}
+
+/* Hide the image in list view */
+#directory-cards.list img {
+    display: none; 
+}
+
+/* Style list items */
+#directory-cards.list h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#directory-cards.list p, 
+#directory-cards.list a {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Fix grid column ordering for list view */
+#directory-cards.list section > * {
+    /* Ensures H2, P, and A elements line up in the defined columns */
+    display: block; 
+    white-space: nowrap; /* Prevents wrapping in narrow columns */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
