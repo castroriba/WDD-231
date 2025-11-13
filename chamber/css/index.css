@@ -1,0 +1,138 @@
+/* Styling for the index.html home page */
+
+/* --- Hero Image and CTA Overlay --- */
+.hero-image-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: 300px; /* Adjust as needed */
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cta-button {
+    background-color: var(--secondary-color); /* Use your accent color */
+    color: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* --- Main Grid Layout (Mobile First) --- */
+.main-grid {
+    display: grid;
+    gap: 15px;
+    padding: 10px;
+    grid-template-areas:
+        "weather"
+        "spotlights"
+        "events";
+}
+
+.weather-section { grid-area: weather; }
+.spotlights-section { grid-area: spotlights; }
+.events-section { grid-area: events; }
+
+/* General Section Styling */
+.main-grid section {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* --- Weather Section Specifics --- */
+#current-weather {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#forecast-output {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+.forecast-day {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* --- Spotlight Section Specifics --- */
+#spotlights-container {
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
+    gap: 10px;
+}
+
+.spotlight-card {
+    border: 1px dashed var(--secondary-color);
+    padding: 10px;
+    text-align: center;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+}
+.spotlight-card img {
+    max-width: 100px;
+    height: auto;
+    margin: 5px 0;
+}
+.level-tag {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+
+/* --- MEDIUM VIEW (e.g., Tablet) --- */
+@media (min-width: 550px) {
+    .main-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "weather events"
+            "spotlights spotlights";
+    }
+
+    #spotlights-container {
+        flex-direction: row; /* Horizontal on tablet/desktop */
+        justify-content: space-around;
+    }
+    .spotlight-card {
+        flex: 1 1 30%; /* Allows 3 cards to fit well */
+    }
+}
+
+/* --- LARGE VIEW (Desktop) --- */
+@media (min-width: 1000px) {
+    .main-grid {
+        grid-template-columns: 2fr 1fr; /* Content and sidebar */
+        grid-template-areas:
+            "events weather"
+            "spotlights spotlights";
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
