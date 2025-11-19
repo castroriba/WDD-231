@@ -1,12 +1,50 @@
-<h1>OpenWeatherMap.org API Test</h1>
-<main>
-  <p>The current temperature in Trier, Germany is <span id="current-temp"></span></p>
-  <figure>
-    <img id="weather-icon" src="" alt="">
-    <figcaption></figcaption>
-  </figure>
-</main>
-<footer>
-  Castro Oriba | OpenWeatherMap.org | CC BY-SA 4.0
-</footer>
-<script src="scripts/weather.js" defer></script>
+// --- Configuration for weather-test.html ---
+// Trier, Germany coordinates (Latitude: 49.749, Longitude: 6.637)
+const TRIER_LAT = 49.749;
+const TRIER_LON = 6.637;
+
+// !!! IMPORTANT: REPLACE "YOUR_API_KEY_HERE" WITH YOUR ACTUAL KEY !!!
+const WEATHER_API_KEY = "5588c195e6b3a730fe86594ef81462d8"; 
+
+// Use the ONE-CALL API for current weather
+const WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${TRIER_LAT}&lon=${TRIER_LON}&units=imperial&appid=${WEATHER_API_KEY}`;
+
+// --- DOM Selectors ---
+const currentTemp = document.querySelector('#current-temp');
+const weatherIcon = document.querySelector('#weather-icon');
+const figCaption = document.querySelector('figcaption');
+
+// --- Helper Function: Capitalize ---
+const capitalize = (s) => s.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+
+// --- Core Function: Fetch & Display Current Weather ---
+async function getCurrentWeather() {
+    try {
+        const response = await fetch(WEATHER_URL);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        
+        // Extract data
+        const temp = data.main.temp.toFixed(0);
+        const desc = data.weather[0].description;
+        const iconCode = data.weather[0].icon;
+        const capitalizedDesc = capitalize(desc);
+
+        // Display content
+        currentTemp.textContent = `${temp}°F`;
+        weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}.png`;
+        weatherIcon.alt = capitalizedDesc;
+        figCaption.textContent = capitalizedDesc;
+
+    } catch (error) {
+        console.error("Weather data failed to load:", error);
+        currentTemp.textContent = 'N/A';
+        figCaption.textContent = 'Error loading data.';
+    }
+}
+
+// --- Initialize Page ---
+document.addEventListener('DOMContentLoaded', getCurrentWeather);

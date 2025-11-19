@@ -1,138 +1,174 @@
-/* Styling for the index.html home page */
+/* --- W03 Chamber Home Page Specific Styles (index.css) --- */
+/*
+Goal:
+1. Fix CTA positioning over the hero image (Criteria 9).
+2. Ensure responsive grid layout works for sections (Criteria 2).
+*/
 
-/* --- Hero Image and CTA Overlay --- */
+/* 1. HERO IMAGE & CTA Positioning (Criteria 9 & 8) */
+.hero-and-cta {
+    position: relative; /* CRITICAL: This must be relative for the overlay to be absolute within it */
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .hero-image-container {
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-    margin-bottom: 20px;
-    height: 300px; /* Adjust as needed */
+    /* Ensures the image container fills the space and remains responsive */
+    width: 100%;
+    height: auto;
 }
 
 .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%;
+    /* Added min-height to ensure it's visible even without fixed height */
+    min-height: 250px; 
+    object-fit: cover;
+    display: block;
 }
 
 .cta-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    position: absolute; /* CRITICAL: Places the overlay over the image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for text contrast */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Ensure CTA header text is large and clear */
+.cta-overlay h1 {
+    color: var(--light-text); /* White text on dark overlay */
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
 }
 
 .cta-button {
-    background-color: var(--secondary-color); /* Use your accent color */
-    color: var(--primary-color);
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 15px;
+    /* Styles are handled mostly in base.css, just ensuring margins are correct here */
+    margin-top: 15px;
+    z-index: 10; /* Ensure button is on top of everything */
 }
 
 /* --- Main Grid Layout (Mobile First) --- */
 .main-grid {
-    display: grid;
-    gap: 15px;
-    padding: 10px;
-    grid-template-areas:
-        "weather"
-        "spotlights"
-        "events";
+    display: grid;
+    gap: 15px;
+    padding: 0 10px 10px 10px; /* Adjusted padding to better match body padding */
+    /* Mobile stacking order (Weather, Spotlights, Events) */
+    grid-template-areas:
+        "weather"
+        "spotlights"
+        "events";
 }
 
 .weather-section { grid-area: weather; }
 .spotlights-section { grid-area: spotlights; }
 .events-section { grid-area: events; }
 
-/* General Section Styling */
+/* General Section Styling - Now mostly handled in base.css */
 .main-grid section {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
+    /* No need to repeat base styles here, but good for specific overrides */
+    /* box-shadow and padding are already in base.css */
 }
 
 /* --- Weather Section Specifics --- */
-#current-weather {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-#forecast-output {
-    display: flex;
-    justify-content: space-around;
-    gap: 10px;
-    margin-top: 10px;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-}
-.forecast-day {
-    text-align: center;
-    font-size: 0.9em;
+.weather-section h2 {
+    margin-bottom: 15px;
 }
 
-/* --- Spotlight Section Specifics --- */
+#current-weather {
+    display: flex;
+    justify-content: space-between; /* Adjusted for better spacing */
+    align-items: center;
+    margin-bottom: 10px;
+}
+#current-weather p {
+    margin: 0;
+}
+#forecast-output {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+.forecast-day {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* --- Spotlight Section Specifics (Fixing the layout for the 3 cards) --- */
+/* This container is now inside .spotlights-section, as confirmed in the fixed HTML */
 #spotlights-container {
-    display: flex;
-    flex-direction: column; /* Stacked on mobile */
-    gap: 10px;
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
+    gap: 10px;
 }
 
 .spotlight-card {
-    border: 1px dashed var(--secondary-color);
-    padding: 10px;
-    text-align: center;
-    background-color: #f7f7f7;
-    border-radius: 5px;
+    /* Using styles from base.css for consistency (border, padding, etc.) */
+    border: 1px dashed var(--secondary-color);
+    padding: 10px;
+    text-align: center;
+    background-color: var(--card-background); /* White background */
+    border-radius: 5px;
 }
 .spotlight-card img {
-    max-width: 100px;
-    height: auto;
-    margin: 5px 0;
+    max-width: 100px;
+    height: auto;
+    margin: 5px auto;
+    display: block;
+}
+.spotlight-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 .level-tag {
-    font-weight: bold;
-    color: var(--primary-color);
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+    display: block;
 }
 
 
-/* --- MEDIUM VIEW (e.g., Tablet) --- */
+/* --- MEDIUM VIEW (e.g., Tablet/Desktop Content Area) --- */
 @media (min-width: 550px) {
-    .main-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "weather events"
-            "spotlights spotlights";
-    }
+    /* Two-column layout for main sections */
+    .main-grid {
+        grid-template-columns: 2fr 1fr; /* Content (2/3) and Sidebar (1/3) */
+        grid-template-areas:
+            "events weather"
+            "spotlights spotlights";
+    }
 
-    #spotlights-container {
-        flex-direction: row; /* Horizontal on tablet/desktop */
-        justify-content: space-around;
-    }
-    .spotlight-card {
-        flex: 1 1 30%; /* Allows 3 cards to fit well */
-    }
+    /* Horizontal layout for the 3 spotlight cards */
+    #spotlights-container {
+        flex-direction: row; 
+        justify-content: space-between; /* Space out the 3 cards */
+    }
+    .spotlight-card {
+        flex: 1 1 31%; /* Allows 3 cards to fit well with space between */
+    }
 }
 
 /* --- LARGE VIEW (Desktop) --- */
 @media (min-width: 1000px) {
-    .main-grid {
-        grid-template-columns: 2fr 1fr; /* Content and sidebar */
-        grid-template-areas:
-            "events weather"
-            "spotlights spotlights";
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+    /* Maintain the 2-column layout but change the order/placement slightly */
+    .main-grid {
+        grid-template-columns: 2fr 1fr; 
+        grid-template-areas:
+            "events weather"
+            "spotlights spotlights";
+        max-width: 1200px; /* Confines grid to max content width */
+        margin: 0 auto;
+    }
 }
