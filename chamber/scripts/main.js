@@ -3,15 +3,15 @@
 // 1. Update Copyright Year
 const yearElement = document.querySelector('#year');
 if (yearElement) {
-    // Get the current four-digit year
-    yearElement.textContent = new Date().getFullYear();
+    // Get the current four-digit year
+    yearElement.textContent = new Date().getFullYear();
 }
 
 // 2. Update Last Modified Date
 const modifiedElement = document.querySelector('#lastModified');
 if (modifiedElement) {
-    // document.lastModified returns the last modified date/time of the current document
-    modifiedElement.textContent = document.lastModified;
+    // document.lastModified returns the last modified date/time of the current document
+    modifiedElement.textContent = document.lastModified;
 }
 
 // --- W01/W02 Mobile Menu Toggle ---
@@ -21,8 +21,10 @@ const mainNav = document.querySelector('.main-nav');
 
 if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', () => {
+        // Toggle the ARIA expanded state for accessibility
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
         menuToggle.setAttribute('aria-expanded', !isExpanded);
+        // Toggle the navigation visibility (CSS handles the display change based on the attribute)
         mainNav.setAttribute('aria-expanded', !isExpanded);
     });
 }

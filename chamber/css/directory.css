@@ -2,137 +2,137 @@
 
 /* Directory Control Buttons */
 .menu-view-control {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 .view-button {
-    padding: 8px 15px;
-    border: 1px solid var(--primary-color); 
-    background-color: var(--card-background); /* white */
-    color: var(--primary-color);
-    cursor: pointer;
-    border-radius: 5px;
+    padding: 8px 15px;
+    border: 1px solid var(--primary-color); 
+    background-color: var(--card-background); /* white */
+    color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 5px;
 }
 .view-button:hover {
-    background-color: var(--background-color);
+    background-color: var(--background-color);
 }
 .view-button.active-view {
-    background-color: var(--primary-color);
-    color: var(--light-text); /* white */
+    background-color: var(--primary-color);
+    color: var(--light-text); /* white */
 }
 
 /* --- GRID VIEW (Default) --- */
 #directory-cards {
-    min-height: 50vh; /* Prevents layout jump when loading */
+    min-height: 50vh; /* Prevents layout jump when loading */
 }
 
 #directory-cards.grid {
-    display: grid;
-    /* Ensures responsiveness by fitting as many 300px columns as possible */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 20px;
+    display: grid;
+    /* Ensures responsiveness by fitting as many 300px columns as possible */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
 }
 
 #directory-cards.grid section {
-    /* Using variables defined in base.css */
-    background-color: var(--card-background);
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Using variables defined in base.css */
+    background-color: var(--card-background);
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #directory-cards.grid h2 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: var(--primary-color);
 }
 
 #directory-cards.grid p {
-    margin: 5px 0;
-    font-size: 0.95rem;
-    color: var(--text-color);
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
 }
 
 /* Image styling for grid view */
 #directory-cards.grid img {
-    width: 150px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 10px;
-    border: none;
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border: none;
 }
 
 /* --- LIST VIEW --- */
 #directory-cards.list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 /* Style the sections for a clean list look */
 #directory-cards.list section {
-    display: grid;
-    /* Define columns for list view: Name, Address, Phone, Website, Level */
-    grid-template-columns: 2fr 2fr 1.5fr 1.5fr 1fr; 
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid #eee;
-    background-color: var(--card-background);
-    box-shadow: none; 
-    text-align: left;
+    display: grid;
+    /* Define columns for list view: Name, Address, Phone, Website, Level */
+    grid-template-columns: 2fr 2fr 1.5fr 1.5fr 1fr; 
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: var(--card-background);
+    box-shadow: none; 
+    text-align: left;
 }
 
 /* Style the first row as a header if desired, or just list items */
 #directory-cards.list section:first-child {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ccc;
 }
 
 /* Hide the image in list view */
 #directory-cards.list img {
-    display: none; 
+    display: none; 
 }
 
 /* Style list items */
 #directory-cards.list h2 {
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 0;
-    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--primary-color);
 }
 
 #directory-cards.list p, 
 #directory-cards.list a {
-    font-size: 0.9rem;
-    margin: 0;
-    color: var(--text-color);
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--text-color);
 }
 
 /* Fix grid column ordering for list view */
 #directory-cards.list section > * {
-    display: block; 
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis;
+    display: block; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* --- Media Query for Mobile List View --- */
 @media (max-width: 768px) {
-    /* Simplify the list columns for mobile devices */
-    #directory-cards.list section {
-        /* Display Name and Website only to conserve space */
-        grid-template-columns: 2fr 1fr; 
-    }
+    /* Simplify the list columns for mobile devices */
+    #directory-cards.list section {
+        /* Display Name and Website only to conserve space */
+        grid-template-columns: 2fr 1fr; 
+    }
 
-    /* Hide less critical elements on mobile list view */
-    #directory-cards.list p {
-        display: none;
-    }
+    /* Hide less critical elements on mobile list view */
+    #directory-cards.list p {
+        display: none;
+    }
 
-    #directory-cards.list a {
-        display: block;
-    }
+    #directory-cards.list a {
+        display: block;
+    }
 }

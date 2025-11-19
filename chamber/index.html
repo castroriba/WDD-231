@@ -1,93 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kampala Chamber of Commerce - Home</title>
-    <meta name="description" content="Official website for the Kampala City Chamber of Commerce, promoting business growth in Uganda's capital city.">
-    
-    <link rel="icon" href="images/favicon.ico"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampala Chamber of Commerce - Home</title>
+    <meta name="description" content="Official website for the Kampala City Chamber of Commerce, promoting business growth in Uganda's capital city.">
+    
+    <link rel="icon" href="images/favicon.ico"> 
 
-        <meta property="og:title" content="Kampala Chamber of Commerce - Empowering Business Growth">
-    <meta property="og:description" content="Official website for the Kampala City Chamber of Commerce, providing resources, networking, and support for local businesses in Uganda.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://castroriba.github.io/wdd231/chamber/index.html">   
-    <meta property="og:image" content="https://castroriba.github.io/wdd231/images/hero-large.webp">     <meta property="og:locale" content="en_US">
-    
-    <link rel="stylesheet" href="css/normalize.css"> 
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index.css"> 
+    <meta property="og:title" content="Kampala Chamber of Commerce - Empowering Business Growth">
+    <meta property="og:description" content="Official website for the Kampala City Chamber of Commerce, providing resources, networking, and support for local businesses in Uganda.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://castroriba.github.io/wdd231/chamber/index.html"> 
+    <meta property="og:image" content="https://castroriba.github.io/wdd231/images/hero-large.webp">
+    <meta property="og:locale" content="en_US">
+    
+    <link rel="stylesheet" href="css/normalize.css"> 
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css"> 
 </head>
 <body>
-    <header class="site-header">
-        <div class="logo-container">
-            <img src="images/logo.webp" alt="Kampala City Chamber of Commerce Logo">
-            <span class="site-title">Kampala Chamber</span>
-        </div>
-        
-        <nav class="main-nav" aria-label="Main Navigation">
-            <a href="index.html" class="nav-link active">Home</a>             
+    <header class="site-header">
+        <div class="logo-container">
+            <img src="images/logo.webp" alt="Kampala City Chamber of Commerce Logo">
+            <span class="site-title">Kampala Chamber</span>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <a href="index.html" class="nav-link active">Home</a> 
             <a href="directory.html" class="nav-link">Directory</a>
-            <a href="join.html" class="nav-link">Join Us</a>
-            <a href="discover.html" class="nav-link">Discover KLA</a>
-        </nav>
-        
-        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
-    </header>
+            <a href="join.html" class="nav-link">Join Us</a>
+            <a href="discover.html" class="nav-link">Discover KLA</a>
+        </nav>
+        
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+    </header>
 
-    <main id="content">
-        <section class="hero-and-cta">
-            <div class="hero-image-container">
-                <img src="images/hero-image.webp" alt="A bustling street view of Kampala city center." class="hero-image">
-                <div class="cta-overlay">
-                    <h1>Empowering Kampala's Business Community</h1>
-                    <a href="join.html" class="cta-button">Join the Chamber Today!</a>                 
+    <main id="content">
+        <section class="hero-and-cta">
+            <div class="hero-image-container">
+                <img src="images/hero-image.webp" alt="A bustling street view of Kampala city center." class="hero-image">
+                <div class="cta-overlay">
+                    <h1>Empowering Kampala's Business Community</h1>
+                    <a href="join.html" class="cta-button">Join the Chamber Today!</a> 
                 </div>
-            </div>
-        </section>
+            </div>
+        </section>
 
-        <div class="main-grid">
-            <section class="events-section">
-                <h2>Upcoming Events</h2>
-                <div id="events-content">
-                    <p><strong>Business Networking Mixer</strong> - Friday, 6 PM at Speke Resort.</p>
-                    <p><strong>Quarterly Economic Summit</strong> - October 15th, 9 AM.</p>
-                </div>
-            </section>
+        <div class="main-grid">
+            <section class="events-section">
+                <h2>Upcoming Events</h2>
+                <div id="events-content">
+                    <p><strong>Business Networking Mixer</strong> - Friday, 6 PM at Speke Resort.</p>
+                    <p><strong>Quarterly Economic Summit</strong> - October 15th, 9 AM.</p>
+                </div>
+            </section>
 
-            <section class="weather-section">
-                <h2>Weather in Kampala</h2>
-                <div id="current-weather">
-                    <p>Temp: <span id="current-temp">--</span></p>
-                    <p>Condition: <span id="weather-desc">--</span></p>
-                    <img id="weather-icon" src="" alt="Weather icon" width="50" height="50">
-                </div>
-                <h3>3-Day Forecast</h3>
-                <div id="forecast-output">
-                    <p>Loading forecast...</p>
-                </div>
-            </section>
+            <section class="weather-section">
+                <h2>Weather in Kampala</h2>
+                <div id="current-weather">
+                    <p>Temp: <span id="current-temp">--</span></p>
+                    <p>Condition: <span id="weather-desc">--</span></p>
+                    <img id="weather-icon" src="" alt="Weather icon" width="50" height="50">
+                </div>
+                <h3>3-Day Forecast</h3>
+                <div id="forecast-output">
+                    <p>Loading forecast...</p>
+                </div>
+            </section>
 
-            <section class="spotlights-section">
-                <h2>Member Spotlights</h2>
-                                <div class="spotlights-grid" id="spotlights-container">
-                    <p>Loading featured Gold and Silver members...</p>
-                </div>
-            </section>
-        </div>
-    </main>
+            <section class="spotlights-section">
+                <h2>Member Spotlights</h2>
+                <div class="spotlights-grid" id="spotlights-container">
+                    <p>Loading featured Gold and Silver members...</p>
+                </div>
+            </section>
+        </div>
+    </main>
 
-    <footer class="site-footer">
-        <p>Kampala Chamber of Commerce &copy; <span id="year"></span></p>
-        <p>
-            Contact: <a href="mailto:info@kcc.ug">info@kcc.ug</a> | Tel: <a href="tel:+256414123456">+256 414 123 456</a>
-        </p>
-        <address>P.O. Box 7010, Kampala, Uganda</address>
-        <p>Castro Oriba | WDD 231</p>
-        <p class="metadata">Last Updated: <span id="lastModified"></span></p>
-    </footer>
+    <footer class="site-footer">
+        <p>Kampala Chamber of Commerce &copy; <span id="year"></span></p>
+        <p>
+            Contact: <a href="mailto:info@kcc.ug">info@kcc.ug</a> | Tel: <a href="tel:+256414123456">+256 414 123 456</a>
+        </p>
+        <address>P.O. Box 7010, Kampala, Uganda</address>
+        <p>Castro Oriba | WDD 231</p>
+        <p class="metadata">Last Updated: <span id="lastModified"></span></p>
+    </footer>
 
-        <script src="scripts/main.js" defer></script> 
-    <script src="scripts/home.js" defer></script> 
+    <script src="scripts/main.js" defer></script> 
+    <script src="scripts/home.js" defer></script> 
 </body>
 </html>

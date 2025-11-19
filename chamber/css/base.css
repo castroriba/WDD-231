@@ -1,106 +1,106 @@
-/* --- High Contrast Colors --- */
+/* --- High Contrast Colors (Criteria 4) --- */
 :root {
-    /* Defined Colors */
-    --primary-color: #113f8c;   /* Dark Blue (Header, Footer, Primary Links) */
-    --secondary-color: #f5a623; /* Gold/Yellow (CTA, Active elements) */
-    --accent-color: #0d2c67;    /* Slightly darker primary for contrast */
-        
-    /* Text and Background */
-    --text-color: #1a1a1a;      /* Very Dark Gray for high contrast (AA-Level) */
-    --light-text: #ffffff;
-    --background-color: #f7f7f7; /* Very Light Gray Background */
-    --card-background: #ffffff;  /* White for card backgrounds */
+    /* Defined Colors */
+    --primary-color: #113f8c;    /* Dark Blue (Header, Footer, Primary Links) */
+    --secondary-color: #f5a623; /* Gold/Yellow (CTA, Active elements) */
+    --accent-color: #0d2c67;    /* Slightly darker primary for contrast */
+        
+    /* Text and Background */
+    --text-color: #1a1a1a;       /* Very Dark Gray for high contrast (AA-Level) */
+    --light-text: #ffffff;
+    --background-color: #f7f7f7; /* Very Light Gray Background */
+    --card-background: #ffffff;  /* White for card backgrounds */
 }
 
 /* --- General Body Styling --- */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
 }
 
 /* --- Layout Defaults --- */
 #content {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 /* --- Typography --- */
 h1, h2, h3 {
-    color: var(--primary-color);
+    color: var(--primary-color);
 }
 h2 {
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 0.5rem;
-    margin-top: 0;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
 }
 
 /* --- Header Styling --- */
 .site-header {
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .logo-container {
-    display: flex;
-    align-items: center;
+    display: flex;
+    align-items: center;
 }
 .site-header img {
-    height: 50px;
-    margin-right: 0.5rem;
+    height: 50px;
+    margin-right: 0.5rem;
 }
 .site-title {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 /* --- Navigation & Wayfinding --- */
 .main-nav {
-    display: none; /* Hidden by default on mobile */
-    flex-grow: 1;
-    text-align: right;
+    display: none; /* Hidden by default on mobile */
+    flex-grow: 1;
+    text-align: right;
 }
 .main-nav a {
-    color: var(--light-text);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    display: inline-block;
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
 }
 .main-nav a:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
 }
 /* Wayfinding for Home page (index.html) */
 .main-nav a.active {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    font-weight: bold;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
 }
 .menu-toggle {
-    display: block; /* Visible on mobile */
-    background: none;
-    color: var(--light-text);
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
+    display: block; /* Visible on mobile */
+    background: none;
+    color: var(--light-text);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
 /* Ensure navigation is visible when menu is toggled (you'll need JavaScript for this) */
 .main-nav[aria-expanded="true"] {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
 }
 .main-nav[aria-expanded="true"] a {
-    display: block;
+    display: block;
 }
 
 /* --- Card/Section Styling (Used for all sections in main-grid) --- */
@@ -108,54 +108,54 @@ h2 {
 .weather-section,
 .spotlights-section,
 .spotlight-card {
-    background-color: var(--card-background);
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    margin-bottom: 1rem;
+    background-color: var(--card-background);
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
 }
 
 /* --- Footer Styling --- */
 .site-footer {
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
 }
 .site-footer a {
-    color: var(--secondary-color); /* Gold links in the footer */
-    text-decoration: none;
+    color: var(--secondary-color); /* Gold links in the footer */
+    text-decoration: none;
 }
 .site-footer a:hover {
-    text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* --- Call to Action Button Styling (Used for the CTA over the hero image) --- */
 .cta-button {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: var(--primary-color); /* Dark Blue text on Gold button for contrast */
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-    border: none; /* Ensure no contrast issue with button border */
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--primary-color); /* Dark Blue text on Gold button for contrast */
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    border: none; /* Ensure no contrast issue with button border */
 }
 
 .cta-button:hover {
-    background-color: #ffc966; /* Slightly lighter gold */
+    background-color: #ffc966; /* Slightly lighter gold */
 }
 
 /* --- Media Query for Desktop Nav --- */
 @media (min-width: 768px) {
-    .menu-toggle {
-        display: none;
-    }
-    .main-nav {
-        display: block; /* Always visible on desktop */
-    }
+    .menu-toggle {
+        display: none;
+    }
+    .main-nav {
+        display: block; /* Always visible on desktop */
+    }
 }
