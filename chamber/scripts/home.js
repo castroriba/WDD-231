@@ -4,7 +4,7 @@ const WEATHER_API_KEY = "5588c195e6b3a730fe86594ef81462d8";
 const KAMPALA_LAT = 0.3476;
 const KAMPALA_LON = 32.5825;
 const FORECAST_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${KAMPALA_LAT}&lon=${KAMPALA_LON}&units=imperial&appid=${WEATHER_API_KEY}`;
-const MEMBER_DATA_URL = 'data/data/members.json';
+const MEMBER_DATA_URL = 'data/members.json';
 
 // --- DOM Selectors ---
 const currentTemp = document.querySelector('#current-temp');
