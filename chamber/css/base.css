@@ -159,3 +159,54 @@ h2 {
         display: block; /* Always visible on desktop */
     }
 }
+
+
+/* --- W04 Modal Styling --- */
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    background-color: var(--card-background); /* White */
+    color: var(--text-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    /* Optional: Add a subtle fade-in animation */
+    animation: fadeIn 0.5s ease-out; 
+}
+
+/* Backdrop covers the rest of the page */
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Close button positioning and style */
+#closeMissionModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+#mission-modal h2 {
+    color: var(--secondary-color); /* Gold title */
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+.dialog-note {
+    font-style: italic;
+    margin-top: 1.5rem;
+    border-top: 1px dashed #ccc;
+    padding-top: 1rem;
+}
+
+/* Define the fade-in animation for smoother display */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
