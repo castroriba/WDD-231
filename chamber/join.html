@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampala Chamber of Commerce - Join Us</title>
+    <meta name="description" content="Apply to become a member of the Kampala Chamber of Commerce and support business growth in Uganda.">
+    
+    <link rel="icon" href="images/favicon.ico"> 
+
+    <meta property="og:title" content="Join the Kampala Chamber of Commerce">
+    <meta property="og:description" content="Membership application form for the Kampala Chamber of Commerce.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://castroriba.github.io/wdd231/chamber/join.html"> 
+    
+    <link rel="stylesheet" href="css/normalize.css"> 
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/join.css"> </head>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <img src="images/logo.webp" alt="Kampala City Chamber of Commerce Logo">
+            <span class="site-title">Kampala Chamber</span>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <a href="index.html" class="nav-link">Home</a> 
+            <a href="directory.html" class="nav-link">Directory</a>
+            <a href="join.html" class="nav-link active">Join Us</a> <a href="discover.html" class="nav-link">Discover KLA</a>
+        </nav>
+        
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+    </header>
+
+    <main id="content">
+        <section class="join-grid">
+            <div class="form-container">
+                <h2>Join the Kampala Chamber of Commerce</h2>
+                <p>Apply today to start leveraging our resources and connections for your business growth!</p>
+                
+                <form method="get" action="thankyou.html">
+                    
+                    <fieldset>
+                        <legend>Applicant Information</legend>
+                        
+                        <label>First Name*
+                            <input type="text" id="fname" name="fname" title="Applicant's first name" autocomplete="given-name" required>
+                        </label>
+                        
+                        <label>Last Name*
+                            <input type="text" id="lname" name="lname" title="Applicant's last name" autocomplete="family-name" required>
+                        </label>
+                        
+                        <label>Organizational Title*
+                            <input type="text" id="orgtitle" name="orgtitle" 
+                                title="Applicant's organizational title (min 7 characters, alpha, hyphen, space only)" 
+                                autocomplete="organization-title" 
+                                pattern="[A-Za-z\s-]{7,}" 
+                                required>
+                        </label>
+                        
+                        <label>Email Address*
+                            <input type="email" id="email" name="email" title="Applicant's email address" 
+                                autocomplete="email" 
+                                placeholder="e.g., info@company.com" 
+                                required>
+                        </label>
+                        
+                        <label>Mobile Phone*
+                            <input type="tel" id="tel" name="tel" title="Applicant's mobile phone number" autocomplete="tel" required>
+                        </label>
+                        
+                        <label>Business/Organization Name*
+                            <input type="text" id="bizname" name="bizname" title="Business or Organization Name" autocomplete="organization" required>
+                        </label>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Membership Details</legend>
+                        
+                        <label>Select Membership Level*
+                            <select id="mlevel" name="mlevel" title="Select your desired membership level" required>
+                                <option value="" disabled selected>Select Level</option>
+                                <option value="np">NP Membership (No Fee)</option>
+                                <option value="bronze">Bronze Membership</option>
+                                <option value="silver">Silver Membership</option>
+                                <option value="gold">Gold Membership</option>
+                            </select>
+                        </label>
+
+                        <label for="bizdesc">Business/Organization Description</label>
+                        <textarea id="bizdesc" name="bizdesc" title="Describe your business or organization"></textarea>
+                    </fieldset>
+
+                    <input type="hidden" id="timestamp" name="timestamp" value="">
+                    
+                    <button type="submit" class="cta-button submit-btn">Apply to Join the Chamber</button>
+                </form>
+            </div>
+
+            <div class="membership-cards-container">
+                <h3>Membership Benefits Overview</h3>
+                
+                <div class="membership-card" id="np-card">
+                    <h4>NP Membership (Free)</h4>
+                    <p>For Non-Profit Organizations.</p>
+                    <button class="benefit-link" data-modal="np-modal">View Benefits</button>
+                </div>
+                
+                <div class="membership-card" id="bronze-card">
+                    <h4>Bronze Membership</h4>
+                    <p>Entry-level access to events and discounts.</p>
+                    <button class="benefit-link" data-modal="bronze-modal">View Benefits</button>
+                </div>
+                
+                <div class="membership-card" id="silver-card">
+                    <h4>Silver Membership</h4>
+                    <p>Enhanced networking, training, and limited advertising.</p>
+                    <button class="benefit-link" data-modal="silver-modal">View Benefits</button>
+                </div>
+                
+                <div class="membership-card" id="gold-card">
+                    <h4>Gold Membership</h4>
+                    <p>Premium visibility, guaranteed spotlight, and free advertising.</p>
+                    <button class="benefit-link" data-modal="gold-modal">View Benefits</button>
+                </div>
+            </div>
+        </section>
+        
+        <dialog id="np-modal">
+            <button class="close-modal-btn">❌</button>
+            <h3>NP Membership Benefits</h3>
+            <ul>
+                <li>No annual membership fee.</li>
+                <li>Basic inclusion in the Chamber Directory.</li>
+                <li>Access to Non-Profit specific workshops.</li>
+            </ul>
+        </dialog>
+        
+        <dialog id="bronze-modal">
+            <button class="close-modal-btn">❌</button>
+            <h3>Bronze Membership Benefits</h3>
+            <ul>
+                <li>Discounted pricing on all Chamber events and training.</li>
+                <li>Monthly business newsletter subscription.</li>
+                <li>Standard inclusion in the Chamber Directory.</li>
+            </ul>
+        </dialog>
+        
+        <dialog id="silver-modal">
+            <button class="close-modal-btn">❌</button>
+            <h3>Silver Membership Benefits</h3>
+            <ul>
+                <li>All Bronze benefits, plus:</li>
+                <li>Free attendance to two annual training seminars.</li>
+                <li>**Eligibility for Homepage Spotlights** (Rotation).</li>
+                <li>50% discount on advertising space.</li>
+            </ul>
+        </dialog>
+        
+        <dialog id="gold-modal">
+            <button class="close-modal-btn">❌</button>
+            <h3>Gold Membership Benefits</h3>
+            <ul>
+                <li>All Silver benefits, plus:</li>
+                <li>**Guaranteed** feature in the Homepage Spotlight (Rotation).</li>
+                <li>Free quarterly mentorship meetings with the Board.</li>
+                <li>100% discount on all advertising space.</li>
+            </ul>
+        </dialog>
+    </main>
+
+    <footer class="site-footer">
+        <p>Kampala Chamber of Commerce &copy; <span id="year"></span></p>
+        <p>
+            Contact: <a href="mailto:info@kcc.ug">info@kcc.ug</a> | Tel: <a href="tel:+256414123456">+256 414 123 456</a>
+        </p>
+        <address>P.O. Box 7010, Kampala, Uganda</address>
+        <p>Castro Oriba | WDD 231</p>
+        <p class="metadata">Last Updated: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="scripts/main.js" defer></script> 
+    <script src="scripts/join.js" defer></script> </body>
+</html>

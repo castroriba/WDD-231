@@ -1,0 +1,152 @@
+/* --- join.css: Styles for the Join and Thank You Pages --- */
+
+/* Main Grid Layout */
+.join-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Form Styles */
+.form-container {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.form-container fieldset {
+    margin-bottom: 2rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 1rem;
+}
+.form-container legend {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    padding: 0 0.5rem;
+    font-weight: bold;
+}
+.form-container label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.form-container textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Membership Cards Container */
+.membership-cards-container h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+.membership-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-content: start; 
+}
+
+/* W04 Initial Card Animation Setup (The JS will trigger the final state) */
+.membership-card {
+    background-color: var(--card-background);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    
+    /* Initial state for transition/animation */
+    opacity: 0; 
+    transform: translateY(20px);
+}
+.membership-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+.membership-card h4 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.benefit-link {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+.benefit-link:hover {
+    background-color: var(--accent-color);
+}
+
+/* Thank You Page Styling */
+.thankyou-content {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+}
+#form-data-display {
+    text-align: left;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #ccc;
+}
+#form-data-display dt {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+#form-data-display dd {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    padding-left: 10px;
+    border-left: 3px solid var(--secondary-color);
+}
+.secondary-btn {
+    background-color: #ddd;
+    color: var(--text-color);
+    margin-left: 1rem;
+}
+.secondary-btn:hover {
+    background-color: #ccc;
+}
+
+
+/* DESKTOP LAYOUT (Media Query) */
+@media (min-width: 768px) {
+    .join-grid {
+        grid-template-columns: 2fr 1fr; /* Form on left, Cards on right */
+        align-items: start;
+    }
+    .membership-cards-container {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+        gap: 1.5rem;
+        padding: 0.5rem;
+    }
+}
